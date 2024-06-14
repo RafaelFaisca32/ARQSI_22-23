@@ -1,0 +1,15 @@
+@startuml SSD
+        hide footbox
+        autonumber
+
+        actor "User" as U
+        actor ":System" as SYS
+        
+        activate U
+                U -> SYS : iniciates the process of watching a user friendship network
+                activate SYS
+                SYS --> U : shows the friendship network of a specific user
+                deactivate SYS
+        deactivate U
+
+@enduml

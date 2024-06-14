@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="177px" preserveAspectRatio="none" style="width:428px;height:177px;background:#FFFFFF;" version="1.1" viewBox="0 0 428 177" width="428px" zoomAndPan="magnify"><defs><filter height="300%" id="f98btdmuazhzu" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f98btdmuazhzu)" height="52.7031" style="stroke:#A80036;stroke-width:1.0;" width="10" x="17.5" y="99.6094"/><rect fill="#FFFFFF" filter="url(#f98btdmuazhzu)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="394.5" y="121.9609"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="22" x2="22" y1="89.6094" y2="170.3125"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="399.5" x2="399.5" y1="89.6094" y2="170.3125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="5" y="86.5332">User</text><ellipse cx="22.5" cy="15" fill="#FEFECE" filter="url(#f98btdmuazhzu)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M22.5,23 L22.5,50 M9.5,31 L35.5,31 M22.5,50 L9.5,65 M22.5,50 L35.5,65 " fill="none" filter="url(#f98btdmuazhzu)" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="371.5" y="86.5332">:System</text><ellipse cx="399.5" cy="15" fill="#FEFECE" filter="url(#f98btdmuazhzu)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M399.5,23 L399.5,50 M386.5,31 L412.5,31 M399.5,50 L386.5,65 M399.5,50 L412.5,65 " fill="none" filter="url(#f98btdmuazhzu)" style="stroke:#A80036;stroke-width:2.0;"/><rect fill="#FFFFFF" filter="url(#f98btdmuazhzu)" height="52.7031" style="stroke:#A80036;stroke-width:1.0;" width="10" x="17.5" y="99.6094"/><rect fill="#FFFFFF" filter="url(#f98btdmuazhzu)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="394.5" y="121.9609"/><polygon fill="#A80036" points="382.5,117.9609,392.5,121.9609,382.5,125.9609,386.5,121.9609" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="27.5" x2="388.5" y1="121.9609" y2="121.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="34.5" y="117.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="337" x="45.5" y="117.1045">iniciates the process of watching a user friendship network</text><polygon fill="#A80036" points="33.5,148.3125,23.5,152.3125,33.5,156.3125,29.5,152.3125" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="27.5" x2="398.5" y1="152.3125" y2="152.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="39.5" y="147.4561">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="269" x="50.5" y="147.4561">shows the friendship network of a specific user</text><!--MD5=[c60c539552ef28511c0fdb65ba2ac061]
+@startuml SSD
+        hide footbox
+        autonumber
+
+        actor "User" as U
+        actor ":System" as SYS
+        
+        activate U
+                U -> SYS : iniciates the process of watching a user friendship network
+                activate SYS
+                SYS - -> U : shows the friendship network of a specific user
+                deactivate SYS
+        deactivate U
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 13:40:07 WEST 2021)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

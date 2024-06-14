@@ -1,0 +1,90 @@
+<div class="Menu">
+
+  <nav>
+    <a routerLink="/change-mood">Change Mood</a>
+    <a routerLink="/change-profile">Change Profile</a>
+    <a routerLink="/consult-strongest-path">Consult Strongest Path</a>
+    <a routerLink="/consult-safest-path">Consult Safest Path</a>
+    <a routerLink="/consult-shortest-path">Consult Shortest Path</a>
+    <a routerLink="/graph">Friend Network</a>
+    <a routerLink="/friendRequest">Friend Request</a>
+    <a routerLink="/listPendingFriendshipRequests">List Pending Friendship Requests</a>
+    <a routerLink="/EditTagConnectionStrength"> Edit Friendship with Connection Strength and Tag</a>
+    <a routerLink="/introductionRequest">Introduction Request</a>
+    <a routerLink="/changeIntroductionState">Change Introduction State</a>
+    <a routerLink="/SugestedFriendships">Suggest new Friends</a>
+    <a routerLink="/dimension-leader-board">Dimension Leader Board</a>
+    <a routerLink="/strength-leader-board">Strength Leader Board</a>
+    <a routerLink="/network-strength">Network Strength</a>
+    <a routerLink="/consult-common-friends-graph"> Consult Common Friends Graph</a>
+    <a routerLink="/consultFriendshipsTagCloud"> Consult All Friendships Tag Cloud</a>
+    <a routerLink="/consultUserTagCloud"> Consult User Tag Cloud</a>
+    <a routerLink="/consultUsersTagCloud"> Consult Users Tag Cloud</a>
+    <a routerLink="/consultUserFriendshipsTagCloud"> Consult User Friendships Tag Cloud</a>
+    <a routerLink="/network-size"> Network Size</a>
+    <a routerLink="/consultRelationStrengthBetweenUsers"> Consult Relation Strength Between Users</a>
+  </nav>
+
+  <h2>Create a Post</h2>
+  <body>
+    <label for="description">Post: </label>
+    <textarea id="description" type="text" #description></textarea>
+    <br> <br> <br>
+    <label for="postTag">PostTag: </label>
+    <input id="postTag" type="text" #postTag>
+
+    <button class="add-button" (click)="create(description.value,postTag.value); description.value='';postTag.value='';">
+      Create post
+    </button>
+  </body>
+
+  <h2>Post feed</h2>
+  <body>
+
+  <label for="email">Please introduce the email of the person you want to see the feed of posts: </label>
+  <input id="email" type="text" #email>
+
+  <button class="post" (click)="getPosts(email.value); email.value='';">
+    See feed
+  </button>
+  <ul>
+    <li *ngFor="let p of posts">
+      Description: {{p.description}} <br>Post Tag: {{p.postTag}} <br> Likes: {{p.like.length}} <br>Dislikes: {{p.dislike.length}}
+      <br>
+      <button class="like" (click)="giveLike(p.id);">
+        Like
+      </button>
+      <button class="dislike" (click)="giveDislike(p.id);">
+        Dislike
+      </button>
+      <br>
+      <label for="description1">Comment: </label>
+      <textarea id="description1" type="text" #description1></textarea>
+      <br> <br> <br>
+      <label for="postTag1">PostTag: </label>
+      <input id="postTag1" type="text" #postTag1>
+      <button class="createComment" (click)="createComment(description1.value,postTag1.value,p.id); description.value='';postTag.value='';">
+        Create comment
+      </button>
+      <button class="showComments" (click)="getComments(p.id)">
+        See comments
+      </button> <br>
+      <ul>
+        <li *ngFor="let c of comments">
+          Description: {{c.description}} <br>Post Tag: {{c.postTag}}
+        </li>
+        <br>
+      </ul>
+    </li>
+  </ul>
+  </body>
+
+
+  <button class="add-button" (click)="deactivate()">
+    Disable account
+  </button>
+
+  <button class="add-button" (click)="logout()">
+    Logout
+  </button>
+</div>

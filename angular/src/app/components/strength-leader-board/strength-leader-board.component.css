@@ -1,0 +1,34 @@
+
+table, th, td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.table {
+  counter-reset: serial-number; /* Set the serial number counter to 0 */
+}
+
+.table td:first-child:before {
+  counter-increment: serial-number; /* Increment the serial number counter */
+  content: counter(serial-number); /* Display the counter */
+}
+
+body{
+  background-image: none;
+  border-radius: 12px;
+}
+h2{
+  color: #264D73;
+}
+button{
+  border-radius: 12px;
+}

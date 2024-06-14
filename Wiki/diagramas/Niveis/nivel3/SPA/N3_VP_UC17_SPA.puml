@@ -1,0 +1,25 @@
+@startuml
+    hide footbox
+        autonumber
+
+        actor "User" as U
+        participant ":Visualization" as SPA
+        participant ":consult-strongest-path.component" as UC
+        participant ":ConsultPathService" as US
+
+        activate U
+            U -> SPA : Fills the destiny needed for the path consult
+            activate SPA
+            SPA -> UC : consultStrongestPath(destiny)
+            activate UC
+            UC -> US : consultStrongestPath(userName,destiny)
+            activate US
+            US ->o empty : HTTP request (get)
+            empty o--> US : answer (Return the strongest path between user and destiny/Bad request)
+            US --> UC : strongest path between user and destiny
+            deactivate US
+            UC --> SPA : strongest path between user and destiny
+            deactivate UC
+            SPA --> U : shows the path
+            deactivate SPA
+        deactivate U

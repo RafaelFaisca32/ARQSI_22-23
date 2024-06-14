@@ -1,0 +1,24 @@
+@startuml
+    hide footbox
+        autonumber
+
+        actor "User" as U
+        participant ":Visualization" as SPA
+        participant ":graph.component" as UC
+        participant ":graphService" as US
+
+        activate U
+            U -> SPA : Fills the level needed for the network
+            activate SPA
+            SPA -> UC : onSubmit(lvl)
+            activate UC
+            UC -> US : getGraphByUserWithLevel(idF,lvl)
+            activate US
+            US ->o empty : HTTP request (get)
+            empty o--> US : answer (Return all friendships of a user to a certain lvl/Bad request)
+            UC -> US : createScene(renderCanvas,answer)
+            UC -> US : animate()
+            deactivate US
+            SPA --> U : shows the network on the specific level
+            deactivate SPA
+        deactivate U

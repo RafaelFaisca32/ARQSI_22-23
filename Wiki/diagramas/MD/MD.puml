@@ -1,0 +1,61 @@
+@startuml
+left to right direction
+
+class User {
+        String Id
+        String Password
+        String Name
+        String BirthDate
+        String Email
+        String State
+        List<String> Tag
+        String PhoneNumber
+        List<String> friendIdList
+}
+class Post {
+        String Description
+        String PostTag
+        String Comments
+}
+
+class Friendship {
+        String RelationTag
+        String ConnectionStrengh
+        String RelationshipStrengh
+        String userId
+}
+
+class Mission {
+        String Description
+        String Difficulty
+        String State
+}
+
+class Introduction{
+        String firstUserId
+        String midleUserId
+        String lastUserId
+        String state
+        String date
+}
+class ConnectionRequest{
+        String firstUserId
+        String lastUserId
+        String state
+        String date
+}
+
+
+
+User "1" --> "0..*" Friendship : has >
+User "1" --> "1" Introduction : had requested an introduction >
+User "1" --> "1" Introduction : it's the user who's request is directed >
+User "0..1" --> "1" Introduction : it's the midle user >
+Introduction "1" --> "0..1" ConnectionRequest : when state it's approved it will create a connection request betwen first and last users
+User "1" --> "1" ConnectionRequest : had requested an introduction >
+(User, ConnectionRequest) .. Friendship
+User "1" --> "1" ConnectionRequest : it's the user who's request is directed >
+(User, ConnectionRequest) .. Friendship
+
+User "1" --> "*" Post : writes a >
+@enduml

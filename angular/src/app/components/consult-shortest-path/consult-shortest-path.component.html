@@ -1,0 +1,10 @@
+<p></p>
+<body>
+<h2>Consult Shortest Path</h2>
+
+<label for="destiny">Destiny:</label>
+<input id="destiny" type="text" #destiny>
+<div *ngIf="path"> <h4>{{path.caminho}}</h4></div>
+<button (click)="goBack()">Back</button>
+<button id="submit" class="consultStrongestPath-button" (click) = "consultShortestPath(destiny.value);destiny.value=''"> Consult</button>
+</body>

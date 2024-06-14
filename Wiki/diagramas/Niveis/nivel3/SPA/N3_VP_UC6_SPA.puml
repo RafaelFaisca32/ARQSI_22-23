@@ -1,0 +1,23 @@
+@startuml
+    hide footbox
+        autonumber
+
+        actor "User" as U
+        participant ":Visualization" as SPA
+        participant ":change-mood.component" as UC
+        participant ":UserService" as US
+
+        activate U
+            U -> SPA : Fills the requested data needed for the mood change
+            activate SPA
+            SPA -> UC : changeMood(mood)
+            activate UC
+            UC -> US : updateMood(userId,mood)
+            activate US
+            US ->o empty : HTTP request (put)
+            empty o--> US : userDTO(Creates userDTO/Bad request)
+            deactivate US
+            deactivate UC
+            SPA --> U : informs the succeed of the operation
+            deactivate SPA
+        deactivate U

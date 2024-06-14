@@ -1,0 +1,11 @@
+<p></p>
+<body>
+<h2>Consult Relation Strength</h2>
+<label for="name">Name of the user:</label>
+<input id="name" type="text" #name>
+<div>
+  <button  class="add-button" id="relationStrengthButton" (click)="getRelationStrengthBetweenUsersComponent(name.value)">Consult Relation Strength Between Users</button>
+</div>
+<div> <h4>{{relationStrength}}</h4></div>
+<button (click)="goBack()">Back</button>
+</body>

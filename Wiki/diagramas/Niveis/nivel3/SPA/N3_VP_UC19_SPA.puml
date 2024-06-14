@@ -1,0 +1,25 @@
+@startuml
+    hide footbox
+        autonumber
+
+        actor "User" as U
+        participant ":Visualization" as SPA
+        participant ":consult-safest-path.component" as UC
+        participant ":ConsultPathService" as US
+
+        activate U
+            U -> SPA : Fills the destiny and the minimum connection strength needed for the path consult
+            activate SPA
+            SPA -> UC : consultSafestPath(destiny,min)
+            activate UC
+            UC -> US : consultSafestPath(userName,destiny,min)
+            activate US
+            US ->o empty : HTTP request (get)
+            empty o--> US : answer (Return the safest path between user and destiny/Bad request)
+            US --> UC : safest path between user and destiny
+            deactivate US
+            UC --> SPA : safest path between user and destiny
+            deactivate UC
+            SPA --> U : shows the path
+            deactivate SPA
+        deactivate U

@@ -1,0 +1,21 @@
+body{
+  background-image: none;
+  background-color: lightpink;
+  border-radius: 12px;
+}
+h2{
+  border-radius: 4px;
+  color: #264D73;
+}
+button{
+  border-radius: 12px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: .5rem;
+  margin: 1rem 0;
+  box-sizing: border-box;
+}
+

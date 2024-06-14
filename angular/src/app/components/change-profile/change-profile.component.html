@@ -1,0 +1,32 @@
+<p></p>
+<body>
+<h2>Change Profile</h2>
+<h4>If you dont want to change a parameter just don't put any text there</h4>
+
+<label for="email">New Email:</label>
+<input id="email" type="text" #email>
+
+<label for="phoneNumber">New Phone Number:</label>
+<input id="phoneNumber" type="text" #phoneNumber>
+
+<label for="password">New Password:</label>
+<input id="password" type="text" #password>
+
+<label for="birthDate">New Birth Date:</label>
+<input id="birthDate" type="text" #birthDate>
+
+<label for="name">New Name:</label>
+<input id="name" type="text" #name>
+
+<label for="tag">New Tags(separate by ","):</label>
+<input id="tag" type="text" #tag>
+<div *ngIf="message"> <h4>{{message}}</h4></div>
+<button (click)="goBack()">Back</button>
+  <button id="submit"class="changeMood-button" (click) = "changeProfile(email.value,phoneNumber.value,password.value,birthDate.value,name.value,tag.value);
+  email.value='';
+  phoneNumber.value='';
+  password.value='';
+  birthDate.value='';
+  name.value='';
+  "> Submit</button>
+</body>

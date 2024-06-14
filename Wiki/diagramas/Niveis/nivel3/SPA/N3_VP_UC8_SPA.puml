@@ -1,0 +1,22 @@
+@startuml
+    hide footbox
+        autonumber
+
+        actor "NotRegisteredUser" as U
+        participant ":Visualization" as SPA
+        participant ":user.component" as UC
+        participant ":UserService" as US
+
+        activate U
+            U -> SPA : Fills the data needed to the registration
+            activate SPA
+            SPA -> UC : add(name,password,birthDate,email,phoneNumber)
+            activate UC
+            UC -> US : addUser(name,password,birthDate,email,phoneNumber)
+            activate US
+            US ->o empty : HTTP request (post)
+            empty o--> US : newUser (Creates user/Bad request)
+            deactivate US
+            SPA --> U : relocates the user to the login page
+            deactivate SPA
+        deactivate U

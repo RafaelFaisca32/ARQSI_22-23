@@ -1,0 +1,23 @@
+<h2>Friend Network
+
+<div>
+
+  <label for="lvl">Level of the network: </label>
+  <input type="text" id="lvl" #graphLvl />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="onSubmit(graphLvl.value);graphLvl.value=''">
+    Show
+  </button>
+
+  <button (click)="goBack()">Back</button>
+
+  <div class="engine-wrapper">
+    <canvas #rendererCanvas id="renderCanvas"></canvas>
+  </div>
+
+</div>
+
+
+
+</h2>

@@ -1,0 +1,10 @@
+<p></p>
+<body>
+<h2>Consult Network Strength</h2>
+<div *ngIf="networkStrength"><h4> Your network strenght is: {{networkStrength}}</h4></div>
+<button (click)="goBack()">Back</button>
+<button id="consult" class="consultNetworkStrength-button"
+        (click)="consult()">
+  Consult
+</button>
+</body>

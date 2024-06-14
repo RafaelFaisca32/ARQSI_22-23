@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/373d251d-a270-4df9-99c1-b716515f818c/resourceGroups/Lapr5BackendNodeJs/providers/Microsoft.Web/sites/Lapr5BackendNodeJs",
+    "appService.deploySubpath": "."
+}

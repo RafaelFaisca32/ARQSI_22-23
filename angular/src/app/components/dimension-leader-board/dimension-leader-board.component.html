@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Network Dimension Leader Board</h2>
+<table class="table" id="table" border="1" id="dimensionLeaderBoard"
+       style="position: relative; background-color: white; left: 20px; margin-bottom: 10px"
+       width="100%" height="50">
+  <thead class="thead-dark">
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Network Dimension</th>
+  </tr>
+  </thead>
+  <tr *ngFor="let entry of leaderBoard ">
+    <td></td>
+    <td>{{ entry.name }}</td>
+    <td>{{ entry.dimension }}</td>
+  </tr>
+</table>
+<button (click)="goBack()">Back</button>
+<button (click)="update()">Update</button>
+</body>
+</html>

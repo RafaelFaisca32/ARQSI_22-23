@@ -1,0 +1,15 @@
+﻿<h2>Friend Request</h2>
+
+<body>
+  <div>
+      <label for="newFriendship">User name: </label>
+      <input id="newFriendship" #userName />
+      <h1></h1>
+      <button class="add-button" id="button1" (click)="add(userName.value); userName.value=''">
+        Add friendship
+      </button>
+
+  </div>
+
+  <button (click)="goBack()">Back</button>
+</body>

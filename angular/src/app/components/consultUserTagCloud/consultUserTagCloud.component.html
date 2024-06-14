@@ -1,0 +1,12 @@
+<h2>Consult User Tag Cloud</h2>
+<body>
+
+<ul class="tagCloud">
+  <li *ngFor="let t of tagClouds">
+    Tag: {{t.tag}} <br>Percentage: {{t.percentage}}%
+    <h1></h1>
+  </li>
+</ul>
+
+<button (click)="goBack()">Back</button>
+</body>

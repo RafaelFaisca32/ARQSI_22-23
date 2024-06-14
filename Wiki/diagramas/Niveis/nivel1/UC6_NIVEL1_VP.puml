@@ -1,0 +1,19 @@
+@startuml SSD
+        hide footbox
+        autonumber
+
+        actor "Player" as P
+        actor ":System" as SYS
+        
+        activate P
+                P -> SYS : iniciates the mood update
+                activate SYS
+                SYS --> P : asks for the new mood
+                deactivate SYS
+                P -> SYS : inserts the requested data
+                activate SYS
+                SYS --> P : confirms the success of the operation
+                deactivate SYS
+        deactivate P
+
+@enduml

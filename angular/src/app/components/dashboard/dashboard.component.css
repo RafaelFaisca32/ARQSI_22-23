@@ -1,0 +1,30 @@
+
+h1 {
+  margin-bottom: 0;
+}
+nav a {
+  padding: 1rem;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: lightpink;
+  color: #3d3d3d;
+  border-radius: 12px;
+}
+nav a:hover {
+  color: white;
+  background-color: #42545C;
+}
+nav a.active {
+  background-color: black;
+}
+
+body{
+  background-image: none;
+  background-color: lightpink;
+  border-radius: 12px;
+}
+h2{
+  color: #264D73;
+}
+

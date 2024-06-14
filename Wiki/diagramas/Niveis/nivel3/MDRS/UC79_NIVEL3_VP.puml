@@ -1,0 +1,46 @@
+@startuml UC79_NIVEL3_VP
+        hide footbox
+        autonumber
+
+        actor "RegisteredUser" as U
+        participant "<<component>>\n<<UI>>\nPost.component" as SYS
+        participant "<<component>>\n<<HTTP SERVER>>\nServer" as C
+        participant "<<component mdr>>\n<<controller>>\nPostController" as UC
+        participant "<<component mdr>>\nPostService" as US
+        participant "<<component mdr>>\n<<domain>>\n post : Post" as USER
+        participant "<<component mdr>>\n<<repository>>\n|PostRepository" as REPO
+        participant "<<component mdr>>\n<<domain>>\n dto : CreatingPostDto" as DTO
+
+        activate U
+                U -> SYS : iniciates the process of posting a post
+                activate SYS
+                SYS --> U : asks for the data needed(description,tag(s))
+                deactivate SYS
+                U -> SYS : inserts the requested data
+                activate SYS
+                SYS -> C : POST Post/ Post(description,userId,postTag)
+                activate C
+                C -> UC : createPost(CreatingPostDto)
+                activate UC
+                UC -> US : createPost(CreatingPostDto)
+                activate US
+                US -> USER : new Post(CreatingUserDto.description,CreatingUserDto.userId,CreatingUserDto.postTag)
+                activate USER
+                deactivate USER
+                US -> REPO : save(post)
+                activate REPO
+                deactivate REPO
+                US -> DTO : new PostDto(post)
+                activate DTO
+                DTO --> US : dto
+                deactivate DTO
+                deactivate UC
+                deactivate US
+                C --> SYS : post(JSON)
+                C --> SYS : 201 Created
+                deactivate C
+                SYS --> U : registers the data in the database
+                deactivate SYS
+        deactivate U
+@enduml
+

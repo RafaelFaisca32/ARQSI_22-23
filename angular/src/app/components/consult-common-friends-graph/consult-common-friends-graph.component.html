@@ -1,0 +1,12 @@
+<p></p>
+<body>
+<h2>Consult Common Friends Graph</h2>
+<label for="friend">Friend name:</label>
+<input id="friend" type="text" #friend>
+<div class="engine-wrapper">
+  <canvas #rendererCanvas id="renderCanvas"></canvas>
+</div>
+<button (click)="goBack()">Back</button>
+<button id="submit" class="consultCommonFriends-button" (click)="consult(friend.value);friend.value=''"> Consult
+</button>
+</body>

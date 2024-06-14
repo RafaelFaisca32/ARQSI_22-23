@@ -1,0 +1,45 @@
+@startuml UC7_NIVEL3_VP
+        hide footbox
+        autonumber
+
+        actor "User" as U
+        participant "<<component>>\n<<UI>>\nGraph.component" as SYS
+        participant "<<component>>\n<<HTTP SERVER>>\nServer" as C
+        participant "<<component mdr>>\n<<controller>>\nGraphController" as UC
+        participant "<<component mdr>>\nFriendshipService" as FS
+        participant "<<component mdr>>\nUserService" as US
+        participant "<<component mdr>>\n<<domain>>\n dto : UserDto" as DTO
+        participant "<<component mdr>>\n<<domain>>\n g : GraphFriendships" as GRAPH
+
+        activate U
+                U -> SYS : iniciates the process of watching a user friendship network
+                activate SYS
+                SYS -> C : GET Graph/{userID}/{level}/GraphFriendshipsPrint
+                activate C
+                C -> UC : GraphFriendshipsPrint (id,level)
+                activate UC
+                UC -> FS : GetFriendshipsFromAsync(id)
+                activate FS
+                FS --> UC : List<FriendshipDto> all
+                deactivate FS
+                UC --> UC : List<List<FriendshipDto>> llf
+                UC -> US : GetByIdAsync(id)
+                activate US
+                US --> UC : UserDto dto
+                deactivate US
+                UC --> UC : Dictionary<string,List<string>> map
+                UC -> GRAPH : Serialize(map)
+                activate GRAPH
+                GRAPH --> GRAPH : addNode(map.Keys)
+                GRAPH --> GRAPH : addNode(map.Keys,map.Values)
+                GRAPH --> UC : g
+                deactivate GRAPH
+                C --> SYS : graph(JSON)
+                deactivate UC
+                C --> SYS : 200 OK
+                deactivate C
+                SYS --> U : shows the friendship network of a specific user
+                deactivate SYS
+        deactivate U
+@enduml
+

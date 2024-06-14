@@ -1,0 +1,24 @@
+<p></p>
+<body>
+<h2>Consult Safest Path</h2>
+
+
+<label for="destiny">Destiny:</label>
+<input id="destiny" type="text" #destiny>
+
+<label for="connectionStrenth">Minimum connection strenth:</label>
+<input id="connectionStrenth" type="text" #connectionStrenth>
+<label for="criterio">Choose a criterion:</label>
+<select name="criterio" id="criterio" #multi>
+  <option value="ligacao">With connection strength</option>
+  <option value="multicriterio" >With relation and connection strength</option>
+</select>
+
+<div *ngIf="path"><h4>{{path.caminho}}</h4></div>
+<br><br>
+<button (click)="goBack()">Back</button>
+<button id="submit" class="consultSafestPath-button"
+        (click)="consultSafestPath(destiny.value, connectionStrenth.value,multi.value);destiny.value='';connectionStrenth.value=''">
+  Consult
+</button>
+</body>

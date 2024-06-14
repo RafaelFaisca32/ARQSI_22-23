@@ -1,0 +1,24 @@
+<h2>Introduction Request</h2>
+
+<body>
+  <div>
+    <!--<ul class="friendships">
+      <li *ngFor="let u of user">
+        User Friendships: {{u.friendship}}
+        <h1></h1>
+      </li>
+    </ul>-->
+
+    <label for="commonFriend">Common Friend: </label>
+    <input id="commonFriend" #commonFriend />
+
+    <label for="friend">Friend: </label>
+    <input id="friend" #friend />
+
+    <button class="addIntroduction" id="button1" (click)="addIntroduction(commonFriend.value,friend.value)">
+      Add Introduction
+    </button>
+  </div>
+
+  <button (click)="goBack()">Back</button>
+</body>

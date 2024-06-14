@@ -1,0 +1,51 @@
+@startuml SD
+autonumber
+actor "User" as U
+participant "<<component>>\n<<UI>>\nCHangeProfile.component" as SNG 
+participant "<<component>>\n<<HTTP SERVER>>\nServer" as SN
+participant "<<component mdr>>\n<<controller>>\nChangeProfileController" as CTRL
+participant "<<component mdr>>\n:UserService" as SER
+participant "<<component mdr>>\n:User" as US 
+participant "<<component mdr>>\n:UserDto" as UDTO
+participant "<<component mdr>>\n:IUserRepository" as UREP
+participant "<<component mdr>>\n:IUnitOfWork" as IUNI
+
+activate U
+U -> SNG : Iniciates the profile update
+activate SNG 
+SNG --> U : asks for the updated profile data
+deactivate SNG
+U -> SNG : inserts the requested data
+activate SNG 
+SNG -> SN : PUT ChangeProfile/{UserId} UserDto
+activate SN
+SN -> CTRL : ChangeUserProfile(id,UserDto)
+activate CTRL
+CTRL -> SER :UserDto = GetById(id)
+activate SER
+SER -> UREP : User = GetByIdAsync(id)
+activate UREP
+deactivate UREP
+SER --> CTRL : UserDto
+deactivate SER
+CTRL -> SER : UserDto1 = ChangeUserProfile(UserDto)
+activate SER
+SER -> UREP : User1 = GetByIdAsync(id)
+activate UREP
+deactivate UREP
+SER-> US : ChangeProfile(Password,Name,Email,BirthDate,PhoneNumber)
+activate US
+deactivate US
+SER -> IUNI : CommitAsync()
+activate IUNI
+deactivate IUNI
+SER --> CTRL : UserDto1
+deactivate SER
+deactivate CTRL
+SN --> SNG : 200 OK
+deactivate SN
+SNG --> U : confirms the data change
+deactivate SNG
+deactivate U 
+
+@enduml

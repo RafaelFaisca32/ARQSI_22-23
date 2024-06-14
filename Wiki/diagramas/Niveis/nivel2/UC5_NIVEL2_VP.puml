@@ -1,0 +1,23 @@
+@startuml SD
+autonumber
+actor "User" as U
+participant "<<component>>\n<<UI>>\nChangeProfile.component" as SNG 
+participant "<<component>>\nMDRS" as SN
+
+
+activate U
+U -> SNG : Iniciates the profile update
+activate SNG 
+SNG --> U : asks for the updated profile data
+deactivate SNG
+U -> SNG : inserts the requested data
+activate SNG 
+SNG -> SN : PUT ChangeProfile/{UserId} UserDto
+activate SN
+SN --> SNG : 200 OK
+deactivate SN
+SNG --> U : confirms the data change
+deactivate SNG
+deactivate U 
+
+@enduml

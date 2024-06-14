@@ -1,0 +1,22 @@
+﻿<h2>List Pending Requests</h2>
+<body>
+  <div>
+    <button class="add-button" id="button1" (click)="listPendingFriendshipRequests()">List Pending Requests</button>
+  </div>
+
+  <ul class="friendships">
+    <li *ngFor="let friendship of friendships">
+      FriendshipId: {{friendship.id}} <br> User: {{friendship.friendA.name}}
+      <h1></h1>
+      <button class="accept-button" (click)="acceptFriendshipRequest(friendship.id)">
+      Accept friendship
+      </button>
+      <button class="reject-button" (click)="rejectFriendshipRequest(friendship.id)">
+        Reject friendship
+      </button>
+      <h1></h1>
+    </li>
+  </ul>
+
+  <button (click)="goBack()">Back</button>
+</body>

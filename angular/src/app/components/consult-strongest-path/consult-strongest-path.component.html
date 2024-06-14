@@ -1,0 +1,17 @@
+<p></p>
+<body>
+<h2>Consult Strongest Path</h2>
+
+<label for="destiny">Destiny:</label>
+<input id="destiny" type="text" #destiny>
+<label for="criterio">Choose a criterion:</label>
+<select name="criterio" id="criterio" #multi>
+  <option value="ligacao">With connection strength</option>
+  <option value="multicriterio" >With relation and connection strength</option>
+</select>
+
+<div *ngIf="path"> <h4>{{path.caminho}}</h4></div>
+<br><br>
+<button (click)="goBack()">Back</button>
+<button id="submit" class="consultStrongestPath-button" (click) = "consultStrongestPath(destiny.value,multi.value);destiny.value=''"> Consult</button>
+</body>

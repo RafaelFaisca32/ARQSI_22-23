@@ -1,0 +1,19 @@
+<h2>Login</h2>
+
+<div>
+  <label for="email">Email: </label>
+  <input id="email" #userEmail />
+
+  <label for="password">Password: </label>
+  <input type="password" id="password" #userPassword />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" id="button1" (click)="onSubmit(userEmail.value,userPassword.value);userEmail.value;userPassword.value=''">
+    Login
+  </button>
+
+  <button class="add-button" id="button2" (click)="register()">
+    Create an account
+  </button>
+
+</div>

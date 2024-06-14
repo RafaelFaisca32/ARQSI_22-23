@@ -1,0 +1,13 @@
+<h2>List Sugested Friendships</h2>
+<body>
+<div>
+  <button  class="add-button" id="sugestFriends" (click)="sugestedFriendships()">List Sugested Friendships</button>
+</div>
+<ul class="users">
+  <li *ngFor="let user of users">
+    User: {{user.name}} Tags: {{user.tag}}
+  </li>
+<button (click)="goBack()">Back</button>
+</ul>
+</body>
+

@@ -1,0 +1,92 @@
+@startuml DDD
+
+    allowmixing
+    skinparam linetype ortho
+    hide circle
+
+    package "Aggregate User" {
+        object "<<root>>\nUser" as User
+        object "<<value>>\nId" as Id
+        object "<<value>>\nName" as Name
+        object "<<value>>\nPassword" as Pass
+        object "<<value>>\nBirthDate" as BirthDate
+        object "<<value>>\nEmail" as Email
+        object "<<value>>\nState" as State
+        object "<<value>>\nTag" as Tag
+        object "<<value>>\nPhoneNumber" as PhoneNumber
+        object "<<value>>\nFriend" as ExternalUser
+    }
+
+    package "Aggregate Introduction" {
+        object "<<root>>\nIntroduction" as Introduction
+        object "<<value>>\nDate" as Date
+        object "<<value>>\nState" as SI
+    }
+
+    package "Aggregate Post" {
+        object "<<root>>\nPost" as Post
+        object "<<value>>\nDescription" as PostDescription
+        object "<<value>>\nPostTag" as PostTag
+        object "<<value>>\nComments" as Comments
+    }
+
+    package "Aggregate Friendship" {
+        object "<<root>>\nFriendship" as Friendship
+        object "<<value>>\nRelationTag" as RelationTag
+        object "<<value>>\nConnectionStrengh" as CS
+        object "<<value>>\nRelationshipStrengh" as RS
+        object "<<value>>\nState" as ST
+    }
+
+    package "Aggregate Mission" {
+        object "<<root>>\nMission" as Mission
+        object "<<value>>\nDescription" as Description
+        object "<<value>>\nDifficulty" as Difficulty
+        object "<<value>>\nState" as MissionState
+        object "<<value>>\nInitialDate" as IDate
+        object "<<value>>\nFinalDate" as FDate
+    }
+
+
+
+    User "1" --> "1" User
+    User "1" --> "1" Id
+    User "1" --> "1" Pass
+    User "2" --> "1" Friendship
+    User "1" --> "0..*" Mission
+
+    User "1" --> "*" ExternalUser
+    User "1" --> "*" Post
+    User "1" --> "1" Name
+    User "1" --> "1" BirthDate
+    User "1" --> "1" Email
+    User "1" --> "1" State
+    User "1" --> "0..*" Tag
+    User "1" --> "1" PhoneNumber
+    User "1" --> "1" Introduction
+    User "1" --> "1" Introduction
+    User "1" --> "1" Introduction
+    User "1" <-- "0.." Mission
+
+    Friendship "1" --> "1" RelationTag
+    Friendship "1" --> "1" CS
+    Friendship "1" --> "1" RS
+    Friendship "1" --> "1" ST
+
+    Mission "1" --> "1" Description
+    Mission "1" --> "1" Difficulty
+    Mission "1" --> "1" MissionState
+    Mission "1" --> "1" IDate
+    Mission "1" --> "1" FDate
+
+    Post "1" --> "1" PostDescription
+    Post "1" --> "0..*" PostTag
+    Post "1" --> "0..*" Comments
+
+    Comments "1" --> "1" User
+
+    Introduction "1" --> "1" Date
+    Introduction "1" --> "1" SI
+    
+
+    @enduml

@@ -1,0 +1,25 @@
+@startuml SD
+autonumber
+actor "User" as U
+participant "<<component>>\n<<UI>>\nChangeMood.component" as SNG 
+participant "<<component>>\nMDRS" as SN
+
+
+activate U
+U -> SNG : Iniciates the mood update
+activate SNG 
+SNG --> U : asks for the updated mood
+deactivate SNG
+U -> SNG : inserts the requested data
+activate SNG 
+SNG -> SN : PUT ChangeMood/{UserId}/{newMood}
+activate SN
+SN --> SNG : 200 OK
+deactivate SN
+SNG --> U : confirms the data change
+deactivate SNG
+deactivate U 
+
+
+
+@enduml

@@ -1,0 +1,19 @@
+@startuml SSD
+        hide footbox
+        autonumber
+
+        actor "NotRegisteredUser" as U
+        participant ":System" as SYS
+        
+        activate U
+                U -> SYS : iniciates the process of registering a user
+                activate SYS
+                SYS --> U : asks for the data needed(name,password,birthdate,email,phone number,state and tag(s))
+                deactivate SYS
+                U -> SYS : inserts the requested data
+                activate SYS
+                SYS --> U : registers the data in the database
+                deactivate SYS
+        deactivate U
+
+@enduml

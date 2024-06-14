@@ -1,0 +1,10 @@
+<p></p>
+<body>
+<h2>Change Mood</h2>
+<h4>Mood must be one of these: Joyful,Distressed,Hopeful,Fearful,Relieve,Disappointed,Proud,Remorseful,Grateful,Angry</h4>
+<label for="mood">New Mood:</label>
+<input id="mood" type="text" #mood>
+<div *ngIf="message"> <h4>{{message}}</h4></div>
+<button  (click)="goBack()">Back</button>
+  <button id="submit" class="changeMood-button" (click) = "changeMood(mood.value);mood.value=''"> Submit</button>
+</body>

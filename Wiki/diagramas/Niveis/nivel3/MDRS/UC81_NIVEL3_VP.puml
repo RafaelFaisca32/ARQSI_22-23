@@ -1,0 +1,40 @@
+@startuml UC81_NIVEL3_VP
+        hide footbox
+        autonumber
+
+        actor "User" as U
+        participant "<<component>>\n<<UI>>\nPost.component" as SYS
+        participant "<<component>>\n<<HTTP SERVER>>\nServer" as C
+        participant "<<component mdr>>\n<<controller>>\nPostController" as UC
+        participant "<<component mdr>>\nPostService" as FS
+        participant "<<component mdr>>\nPostRepository" as PR
+        participant "<<component mdr>>\n<<domain>>\n dto : PostDto" as DTO
+
+        activate U
+                U -> SYS : iniciates the process of getting a post
+                activate SYS
+                SYS -> C : GET Post/getPosts/{userID}/
+                activate C
+                C -> UC : getPosts (userId)
+                activate UC
+                UC -> FS : getPosts(userId)
+                activate FS
+                FS --> FS : List<PostDto>> postDTOResult
+                FS -> PR : findByUserId(userID)
+                activate PR
+                FS --> FS : postDTOResult.push(findByUserId(userID))
+                deactivate PR
+                FS --> DTO : new PostDto(post)
+                activate DTO
+                DTO --> FS : dto
+                deactivate DTO
+                deactivate FS
+                C --> SYS : post(JSON)
+                deactivate UC
+                C --> SYS : 200 OK
+                deactivate C
+                SYS --> U : shows the post of a specific user
+                deactivate SYS
+        deactivate U
+@enduml
+

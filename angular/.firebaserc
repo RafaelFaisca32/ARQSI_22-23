@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lapr5-g59": {
+      "hosting": {
+        "angular.io-example": [
+          "lapr5-g59"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lapr5-g59"
+  }
+}

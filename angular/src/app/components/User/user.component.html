@@ -1,0 +1,57 @@
+<h2>Register User</h2>
+
+<div>
+  <label for="name">Name: </label>
+  <input id="name" #userName />
+
+  <label for="password">Password: </label>
+  <input type="password" id="password" #userPassword />
+
+  <label for="birthdate">Birthdate: </label>
+  <input id="birthdate" #userBirthdate />
+
+  <label for="email">Email: </label>
+  <input id="email" #userEmail />
+
+  <label for="phoneNumber">Phone number: </label>
+  <input id="phoneNumber" #userPhoneNumber />
+
+  <body>
+
+  <p><strong>To create an account in Graphs4Social is necessary to agree with our Privacy Policies.</strong></p>
+
+  <p>
+    When you create an account, we process your personal data, taking into account the following points:</p>
+
+  <p>  - We store the data you provide us, such as, name, email, phone number and birth date to service control.</p>
+  <p> - We will keep your name and email to be able to identify you in our database.</p>
+  <p> - We use your email and phone number to be able to communicate with the client. This communication aims to the treatment of personal data and further changes in our Privacy Policies.</p>
+
+  <p> - In case of inativity by the client, the data will remain in the system for a period of one year. At the end of this period the data will be removed from the system.</p>
+
+  <p>  At any time, it is possible for the customer to access their data (and may even change them), the way in which they are handled and their purpose.</p>
+
+  <p>The customer can also request the removal of certain data:</p>
+
+  <p>    - If these are no longer needed for its purpose.</p>
+  <p> - When consent is withdrawn and there is no other legal basis for it.</p>
+  <p>- When you oppose the treatment and there are no legitimate interests prevailing.</p>
+  <p> - When personal data have been unlawfully processed.</p>
+  <p>- When personal data have to be erased in order to fulfill a legal obligation.</p>
+  <p> - When personal data have been collected in the context of providing information society services.
+    </p>
+
+  <label for="check"><strong> I declare that I have read, understood and accepted the Privacy Policies and that I am 13 years of age or older.</strong></label>
+  <input type="checkbox" id="check" (change)="toggleEditable($event)">
+  </body>
+  <br>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="add(userName.value,userPassword.value,userBirthdate.value,userEmail.value,userPhoneNumber.value); userName.value='';userPassword.value='';userBirthdate.value='';userEmail.value='';userPhoneNumber.value='';">
+    Create account
+  </button>
+
+  <button class="add-button" (click)="login()">
+    Login account
+  </button>
+</div>
+

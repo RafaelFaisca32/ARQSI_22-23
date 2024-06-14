@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="231px" preserveAspectRatio="none" style="width:353px;height:231px;background:#FFFFFF;" version="1.1" viewBox="0 0 353 231" width="353px" zoomAndPan="magnify"><defs><filter height="300%" id="f12xj8wru950m5" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f12xj8wru950m5)" height="108.5313" style="stroke:#A80036;stroke-width:1.0;" width="10" x="25" y="98.2969"/><rect fill="#FFFFFF" filter="url(#f12xj8wru950m5)" height="29.1328" style="stroke:#A80036;stroke-width:1.0;" width="10" x="315" y="119.4297"/><rect fill="#FFFFFF" filter="url(#f12xj8wru950m5)" height="29.1328" style="stroke:#A80036;stroke-width:1.0;" width="10" x="315" y="177.6953"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="30" x2="30" y1="88.2969" y2="224.8281"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="319.5" x2="319.5" y1="88.2969" y2="224.8281"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="5" y="84.9951">Player</text><ellipse cx="30" cy="15" fill="#FEFECE" filter="url(#f12xj8wru950m5)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M30,23 L30,50 M17,31 L43,31 M30,50 L17,65 M30,50 L43,65 " fill="none" filter="url(#f12xj8wru950m5)" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="287.5" y="84.9951">:System</text><ellipse cx="320" cy="15" fill="#FEFECE" filter="url(#f12xj8wru950m5)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M320,23 L320,50 M307,31 L333,31 M320,50 L307,65 M320,50 L333,65 " fill="none" filter="url(#f12xj8wru950m5)" style="stroke:#A80036;stroke-width:2.0;"/><rect fill="#FFFFFF" filter="url(#f12xj8wru950m5)" height="108.5313" style="stroke:#A80036;stroke-width:1.0;" width="10" x="25" y="98.2969"/><rect fill="#FFFFFF" filter="url(#f12xj8wru950m5)" height="29.1328" style="stroke:#A80036;stroke-width:1.0;" width="10" x="315" y="119.4297"/><rect fill="#FFFFFF" filter="url(#f12xj8wru950m5)" height="29.1328" style="stroke:#A80036;stroke-width:1.0;" width="10" x="315" y="177.6953"/><polygon fill="#A80036" points="303,115.4297,313,119.4297,303,123.4297,307,119.4297" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="35" x2="309" y1="119.4297" y2="119.4297"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="42" y="114.3638">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="167" x="55" y="114.3638">iniciates the mood update</text><polygon fill="#A80036" points="46,144.5625,36,148.5625,46,152.5625,42,148.5625" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="40" x2="319" y1="148.5625" y2="148.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="52" y="143.4966">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="148" x="65" y="143.4966">asks for the new mood</text><polygon fill="#A80036" points="303,173.6953,313,177.6953,303,181.6953,307,177.6953" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="35" x2="309" y1="177.6953" y2="177.6953"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="8" x="42" y="172.6294">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="170" x="54" y="172.6294">inserts the requested data</text><polygon fill="#A80036" points="41,202.8281,31,206.8281,41,210.8281,37,206.8281" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="35" x2="319" y1="206.8281" y2="206.8281"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="47" y="201.7622">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="243" x="60" y="201.7622">confirms the success of the operation</text><!--MD5=[c22ffa4051bac43083cb91fbfb6833ab]
+@startuml
+hide footbox
+        autonumber
+
+        actor "Player" as P
+        actor ":System" as SYS
+        
+        activate P
+                P -> SYS : iniciates the mood update
+                activate SYS
+                SYS - -> P : asks for the new mood
+                deactivate SYS
+                P -> SYS : inserts the requested data
+                activate SYS
+                SYS - -> P : confirms the success of the operation
+                deactivate SYS
+        deactivate P
+@enduml
+
+PlantUML version 1.2021.13beta8(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

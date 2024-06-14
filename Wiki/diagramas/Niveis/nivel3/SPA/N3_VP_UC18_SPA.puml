@@ -1,0 +1,25 @@
+@startuml
+    hide footbox
+        autonumber
+
+        actor "User" as U
+        participant ":Visualization" as SPA
+        participant ":consult-shortest-path.component" as UC
+        participant ":ConsultPathService" as US
+
+        activate U
+            U -> SPA : Fills the destiny needed for the path consult
+            activate SPA
+            SPA -> UC : consultShortestPath(destiny)
+            activate UC
+            UC -> US : consultShortestPath(userName,destiny)
+            activate US
+            US ->o empty : HTTP request (get)
+            empty o--> US : answer (Return the shortest path between user and destiny/Bad request)
+            US --> UC : shortest path between user and destiny
+            deactivate US
+            UC --> SPA : shortest path between user and destiny
+            deactivate UC
+            SPA --> U : shows the path
+            deactivate SPA
+        deactivate U

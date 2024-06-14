@@ -1,0 +1,25 @@
+@startuml SD
+        hide footbox
+        autonumber
+
+        actor "NotRegisteredUser" as U
+        participant "<<component>>\n<<UI>>\nUser.component" as SYS
+        participant "<<component>>\nMDRS" as C
+
+        activate U
+                U -> SYS : iniciates the process of registering a user
+                activate SYS
+                SYS --> U : asks for the data needed(name,password,birthdate,email,phone number,state and tag(s))
+                deactivate SYS
+                U -> SYS : inserts the requested data
+                activate SYS
+                SYS -> C : POST User/ User(name,password,birthdate,email,phone number,state,tag)
+                activate C
+                C --> SYS : user(JSON)
+                C --> SYS : 201 Created
+                deactivate C
+                SYS --> U : registers the data in the database
+                deactivate SYS
+        deactivate U
+@enduml
+

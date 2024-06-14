@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "f5f2ca86-a8a4-4a0c-ae26-3da41b4dd4f4",
+		"name": "LikePostTests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Success",
+			"item": [
+				{
+					"name": "Create Post",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"text\", \"Postman Test\");"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const responseJson = pm.response.json();\r",
+									" \r",
+									"\r",
+									"// Code Passed\r",
+									"pm.test(\"Status code is 200 post created\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.globals.set(\"id\", responseJson.id); // save the id for further tests\r",
+									"pm.globals.set(\"userId\", responseJson.userid); // save the id for further test"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"{{text}}\",\r\n    \"postTag\": \"{{text}}\",\r\n    \"userId\": \"{{$guid}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like Post",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"mail\", \"@gmail.com\");\r",
+									"pm.environment.set(\"text\", \"meu post para like\");\r",
+									"\r",
+									"console.log(pm.environment.get(\"id\"));\r",
+									"console.log(pm.environment.get(\"userid\"))"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const responseJson = pm.response.json();\r",
+									" \r",
+									"\r",
+									"// Code Passed\r",
+									"pm.test(\"Status code is 201 liked post\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/posts/giveLike/{{id}}/{{userId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts",
+								"giveLike",
+								"{{id}}",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Error",
+			"item": [
+				{
+					"name": "Like Post Error",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"mail\", \"@gmail.com\");\r",
+									"pm.environment.set(\"text\", \"meu post para like\");\r",
+									"\r",
+									"console.log(pm.globals.get(\"id\"));\r",
+									"console.log(pm.globals.get(\"userId\"))"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const responseJson = pm.response.json();\r",
+									" \r",
+									"\r",
+									"// Code Passed\r",
+									"pm.test(\"Status code is 404 liked post\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/posts/giveLike/{{$guid}}/{{$guid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts",
+								"giveLike",
+								"{{$guid}}",
+								"{{$guid}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

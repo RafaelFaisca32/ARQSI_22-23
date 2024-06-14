@@ -1,0 +1,19 @@
+@startuml SSD
+        hide footbox
+        autonumber
+
+        actor "User" as U
+        actor ":System" as SYS
+        
+        activate U
+                U -> SYS : iniciates the profile update
+                activate SYS
+                SYS --> U : asks for the new profile data
+                deactivate SYS
+                U -> SYS : inserts the requested data
+                activate SYS
+                SYS --> U : confirms the success of the operation
+                deactivate SYS
+        deactivate U
+
+@enduml

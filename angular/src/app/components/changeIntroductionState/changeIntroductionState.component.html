@@ -1,0 +1,20 @@
+<h2>Change Introduction State</h2>
+
+<body>
+<div>
+  {{message}}
+  <li *ngFor="let i of introductions">
+    Friendship: {{i.requester}} => {{i.friend}}
+    <button class="acceptIntroduction" id="button1" (click)="acceptFriendshipRequest(i.id)">
+    Accept
+    </button>
+
+    <button class="rejectIntroduction" id="button2" (click)="rejectFriendshipRequest(i.id)">
+      Reject
+    </button>
+    <h1></h1>
+  </li>
+</div>
+
+<button (click)="goBack()">Back</button>
+</body>
